@@ -1,39 +1,16 @@
 <!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Demo1 | Hola Mundo</title>
-    <style>
-        :root { font-family: system-ui, sans-serif; color: #172033; background: #f4f7fb; }
-        body { display: grid; min-height: 100vh; place-items: center; margin: 0; }
-        main { max-width: 620px; padding: 3rem; text-align: center; background: white; border-radius: 20px; box-shadow: 0 15px 45px #1720331c; }
-        h1 { margin-bottom: .5rem; color: #3451d1; }
-        p { line-height: 1.6; }
-        button { border: 0; border-radius: 999px; padding: .8rem 1.4rem; color: white; background: #3451d1; cursor: pointer; font-size: 1rem; }
-        #status { min-height: 1.5rem; margin-top: 1.5rem; }
-    </style>
-</head>
-<body>
-<main>
-    <h1>Hola Mundo</h1>
-    <p>Frontend de Demo1 conectado con Spring Boot y PostgreSQL.</p>
-    <button id="check">Probar backend</button>
-    <p id="status" role="status"></p>
-</main>
-<script>
-    document.querySelector('#check').addEventListener('click', async () => {
-        const status = document.querySelector('#status');
-        status.textContent = 'Conectando...';
-        try {
-            const response = await fetch('/api/hello');
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const data = await response.json();
-            status.textContent = data.message;
-        } catch (error) {
-            status.textContent = `No se pudo conectar con el backend: ${error.message}`;
-        }
-    });
-</script>
-</body>
+<html lang="en">
+  <head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowi</title>
+    <!-- figma:head-end -->
+  </head>
+  <body>
+    <!-- figma:body-start -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- figma:body-end -->
+  </body>
 </html>

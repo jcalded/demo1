@@ -24,8 +24,8 @@ services:
     depends_on:
       database:
         condition: service_healthy
-    expose:
-      - "8080"
+    ports:
+      - "8080:8080"
 
   frontend:
     build:
@@ -34,7 +34,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "8080:80"
+      - "3030:80"
 
 volumes:
   demo1-postgres-data:
